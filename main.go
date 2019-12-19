@@ -22,8 +22,8 @@ func main(){
 
 	//fmt.Println(os.Args)
 	ginpprof.Wrapper(router)
-	router.Static("/static/", "src/blogger/static")
-	router.LoadHTMLGlob("src/blogger/views/*")
+	router.Static("/static/", "./static")
+	router.LoadHTMLGlob("views/*")
 
 	router.GET("/", controller.IndexHandle)
 	//发布文章页面
