@@ -14,7 +14,7 @@ import (
 func main(){
 	router := gin.Default()
 
-	dns := "root:@tcp(127.0.0.1:3306)/blogger?parseTime=true"
+	dns := "root:oneinstack@tcp(122.51.110.200:3306)/blogger?parseTime=true"
 	err := db.Init(dns)
 	if err != nil{
 		panic(err)
