@@ -1,26 +1,14 @@
 package main
 
 import (
-	"github.com/DeanThompson/ginpprof"
 	"github.com/gin-gonic/gin"
+	"github.com/DeanThompson/ginpprof"
 	"blogger/dal/db"
 	"blogger/controller"
 	//"fmt"
 	//"os"
-	//"github.com/DeanThompson/ginpprof"
-	//"blogger/controller"
 )
 
-
-//func main() {
-//	r := gin.Default()
-//	r.GET("/ping", func(c *gin.Context) {
-//		c.JSON(200, gin.H{
-//			"message": "pong",
-//		})
-//	})
-//	r.Run() // listen and serve on 0.0.0.0:8080
-//}
 
 
 func main(){
