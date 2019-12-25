@@ -6,7 +6,7 @@ import (
 	"blogger/dal/db"
 	//"blogger/controller"
 	"fmt"
-	//"os"
+	"os"
 )
 
 
@@ -17,12 +17,11 @@ func main(){
 	//dns := "root:@tcp(127.0.0.1:3306)/blogger?parseTime=true"
 	dns := "root:oneinstack@tcp(localhost:3306)/blogger?parseTime=true"
 	err := db.Init(dns)
-	fmt.Println("f1 failed:", err)
-	//if err != nil{
-	//	panic(err)
-	//}
-	//
-	////fmt.Println(os.Args)
+	if err != nil{
+		panic(err)
+	}
+
+	fmt.Println(os.Args)
 	//ginpprof.Wrapper(router)
 	////router.Static("/static/", "src/blogger/static")
 	////router.LoadHTMLGlob("src/blogger/views/*")
