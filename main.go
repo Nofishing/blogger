@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/DeanThompson/ginpprof"
 	"blogger/dal/db"
-	//"blogger/controller"
+	"blogger/controller"
 	"fmt"
 	"os"
 	//"github.com/DeanThompson/ginpprof"
@@ -30,7 +30,7 @@ func main(){
 
 	fmt.Println(os.Args)
 	//
-	//router.GET("/", controller.IndexHandle)
+	router.GET("/", controller.IndexHandle)
 	////发布文章页面
 	//router.GET("/article/new/", controller.NewArticle)
 	////文章提交接口
