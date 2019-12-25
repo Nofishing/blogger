@@ -1,18 +1,19 @@
 package main
 
 import (
-	//"github.com/gin-gonic/gin"
-	//"github.com/DeanThompson/ginpprof"
+	"github.com/gin-gonic/gin"
+	"github.com/DeanThompson/ginpprof"
 	"blogger/dal/db"
 	//"blogger/controller"
 	"fmt"
 	"os"
+	//"github.com/DeanThompson/ginpprof"
 )
 
 
 
 func main(){
-	//router := gin.Default()
+	router := gin.Default()
 
 	//dns := "root:@tcp(127.0.0.1:3306)/blogger?parseTime=true"
 	dns := "root:oneinstack@tcp(localhost:3306)/blogger?parseTime=true"
@@ -21,12 +22,13 @@ func main(){
 		panic(err)
 	}
 
+	ginpprof.Wrapper(router)
+	//router.Static("/static/", "src/blogger/static")
+	//router.LoadHTMLGlob("src/blogger/views/*")
+	router.Static("/static/", "./static")
+	router.LoadHTMLGlob("views/*")
+
 	fmt.Println(os.Args)
-	//ginpprof.Wrapper(router)
-	////router.Static("/static/", "src/blogger/static")
-	////router.LoadHTMLGlob("src/blogger/views/*")
-	//router.Static("/static/", "./static")
-	//router.LoadHTMLGlob("views/*")
 	//
 	//router.GET("/", controller.IndexHandle)
 	////发布文章页面
