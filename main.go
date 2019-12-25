@@ -14,7 +14,8 @@ import (
 func main(){
 	router := gin.Default()
 
-	dns := "root:oneinstack@tcp(127.0.0.1:3306)/blogger?parseTime=true"
+	//dns := "root:@tcp(127.0.0.1:3306)/blogger?parseTime=true"
+	dns := "root:oneinstack@tcp(localhost:3306)/blogger?parseTime=true"
 	err := db.Init(dns)
 	if err != nil{
 		panic(err)
@@ -22,6 +23,8 @@ func main(){
 
 	//fmt.Println(os.Args)
 	ginpprof.Wrapper(router)
+	//router.Static("/static/", "src/blogger/static")
+	//router.LoadHTMLGlob("src/blogger/views/*")
 	router.Static("/static/", "./static")
 	router.LoadHTMLGlob("views/*")
 
