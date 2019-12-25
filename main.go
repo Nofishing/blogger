@@ -30,9 +30,9 @@ func main(){
 
 	fmt.Println(os.Args)
 	//
-	router.GET("/", controller.IndexHandle)
+	//router.GET("/", controller.IndexHandle)
 	////发布文章页面
-	//router.GET("/article/new/", controller.NewArticle)
+	router.GET("/article/new/", controller.NewArticle)
 	////文章提交接口
 	//router.POST("/article/submit/", controller.ArticleSubmit)
 	////文章详情页
