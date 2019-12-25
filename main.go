@@ -53,5 +53,5 @@ func main(){
 	//router.POST("/leave/submit/", controller.LeaveSubmit)
 	////分类下面的文章列表
 	//router.GET("/category/", controller.CategoryList)
-	//router.Run(":8080")
+	router.Run(":8080")
 }
