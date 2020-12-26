@@ -14,8 +14,8 @@ import (
 func main(){
 	router := gin.Default()
 
-	//dns := "root:@tcp(127.0.0.1:3306)/blogger?parseTime=true"
-	dns := "root:oneinstack@tcp(localhost:3306)/blogger?parseTime=true"
+	dns := "root:@tcp(127.0.0.1:3306)/blogger?parseTime=true"
+	//dns := "root:oneinstack@tcp(localhost:3306)/blogger?parseTime=true"
 	err := db.Init(dns)
 	if err != nil{
 		panic(err)
@@ -27,7 +27,7 @@ func main(){
 	router.Static("/static/", "./static")
 	router.LoadHTMLGlob("views/*")
 
-	fmt.Println(os.Args)
+	fmt.Println(os.Args)//输出指令
 	router.GET("/", controller.IndexHandle)
 	//发布文章页面
 	router.GET("/article/new/", controller.NewArticle)
